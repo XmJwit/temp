@@ -15,12 +15,12 @@ let inviteCodes = [
 0 0-23/1 * * * city.js
 */
 let inviteCodes = [
+  '-ryUXKtdYG0Xa0HEQ4jHpI80p-zenVyi',
   '-ryUXagIZjEXNhrCStnDpFUN-qHhHKUy',
   'oev4WKsJb2ZHYxOrCpeJ94dmUTv3',
   'o-j6X6gNe2BAZRLBQtvHu2PMvmpTP68',
   '8auoCPJYCTkPLxKIBsq14w',
-  '-ryUX6VdYzcQMRTAG4-Ro9YpwemSBMsN',
-  '-ryUXKtdYG0Xa0HEQ4jHpI80p-zenVyi'
+  '-ryUX6VdYzcQMRTAG4-Ro9YpwemSBMsN'
 ]
 
 const $ = new Env('城城领现金');
