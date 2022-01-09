@@ -5,8 +5,11 @@
 码字格式
 
 let inviteCodes = [
-  'xxxx',
-  'xxxx',
+  'ZXASTT0225KkcRBod9QGDdRLylPUMJwFjRWn6W7zB55awQ',
+  'ZXASTT018v_5wQRkc_FbTIBub1AFjRWn6W7zB55awQ',
+  'ZXASTT020vf1yRhoY6FDUJhrxnPcIFjRWn6W7zB55awQ',
+  'ZXASTT011774gEUBNmgkFjRWn6W7zB55awQ',
+  'ZXASTT0225KkcRhdI8AeEchzwxaNeIAFjRWn6W7zB55awQ'
 ]
 
 0 0-23/1 * * * city.js
