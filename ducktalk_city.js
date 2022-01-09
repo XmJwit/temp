@@ -5,15 +5,24 @@
 码字格式
 
 let inviteCodes = [
-  'ZXASTT0225KkcRBod9QGDdRLylPUMJwFjRWn6W7zB55awQ',
-  'ZXASTT018v_5wQRkc_FbTIBub1AFjRWn6W7zB55awQ',
-  'ZXASTT020vf1yRhoY6FDUJhrxnPcIFjRWn6W7zB55awQ',
-  'ZXASTT011774gEUBNmgkFjRWn6W7zB55awQ',
-  'ZXASTT0225KkcRhdI8AeEchzwxaNeIAFjRWn6W7zB55awQ'
+  'xxxx',
+  'xxxx',
+  'xxx',
+  'xxx',
+  'xxxx'
 ]
 
 0 0-23/1 * * * city.js
 */
+let inviteCodes = [
+  '-ryUXagIZjEXNhrCStnDpFUN-qHhHKUy',
+  'oev4WKsJb2ZHYxOrCpeJ94dmUTv3',
+  'o-j6X6gNe2BAZRLBQtvHu2PMvmpTP68',
+  '8auoCPJYCTkPLxKIBsq14w',
+  '-ryUX6VdYzcQMRTAG4-Ro9YpwemSBMsN',
+  '-ryUXKtdYG0Xa0HEQ4jHpI80p-zenVyi'
+]
+
 const $ = new Env('城城领现金');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
