@@ -14,14 +14,6 @@ let inviteCodes = [
 
 0 0-23/1 * * * city.js
 */
-let inviteCodes = [
-  '-ryUXKtdYG0Xa0HEQ4jHpI80p-zenVyi',
-  '-ryUXagIZjEXNhrCStnDpFUN-qHhHKUy',
-  'oev4WKsJb2ZHYxOrCpeJ94dmUTv3',
-  'o-j6X6gNe2BAZRLBQtvHu2PMvmpTP68',
-  '8auoCPJYCTkPLxKIBsq14w',
-  '-ryUX6VdYzcQMRTAG4-Ro9YpwemSBMsN'
-]
 
 const $ = new Env('城城领现金');
 const notify = $.isNode() ? require('./sendNotify') : '';
@@ -41,9 +33,14 @@ if ($.isNode()) {
   cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-// let inviteCodes = [
-//   'xxx',
-// ]
+let inviteCodes = [
+  '-ryUXKtdYG0Xa0HEQ4jHpI80p-zenVyi',
+  '-ryUXagIZjEXNhrCStnDpFUN-qHhHKUy',
+  'oev4WKsJb2ZHYxOrCpeJ94dmUTv3',
+  'o-j6X6gNe2BAZRLBQtvHu2PMvmpTP68',
+  '8auoCPJYCTkPLxKIBsq14w',
+  '-ryUX6VdYzcQMRTAG4-Ro9YpwemSBMsN'
+]
 !(async () => {
   if (!cookiesArr[0]) {
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
