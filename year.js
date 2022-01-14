@@ -96,83 +96,83 @@ $.shareCodesArr = [];
                     }
                     let task = []
                     let r = []
-                    for (var p = 0; p < res.taskVos.length; p++) {
-                        task = res.taskVos[p]
-                        if (task.status != 1) continue
-                        switch (task.taskType) {
-                            case 7:
-                            case 9:
-                            case 3:
-                            case 6:
-                            case 26:
-                                var tmp = []
-                                if (task.taskType == 7) {
-                                    tmp = task.browseShopVo
-                                } else {
-                                    tmp = task.shoppingActivityVos
-                                }
+                    // for (var p = 0; p < res.taskVos.length; p++) {
+                    //     task = res.taskVos[p]
+                    //     if (task.status != 1) continue
+                    //     switch (task.taskType) {
+                    //         case 7:
+                    //         case 9:
+                    //         case 3:
+                    //         case 6:
+                    //         case 26:
+                    //             var tmp = []
+                    //             if (task.taskType == 7) {
+                    //                 tmp = task.browseShopVo
+                    //             } else {
+                    //                 tmp = task.shoppingActivityVos
+                    //             }
 
-                                for (var o = 0; o < tmp.length; o++) {
-                                    console.log(`\n\n ${tmp[o].title?tmp[o].title:tmp[o].shopName}`)
-                                    if (tmp[o].status == 1) {
-                                        conti = true
-                                        await tigernian_collectScore(tmp[o].taskToken, task.taskId)
-                                    }
+                    //             for (var o = 0; o < tmp.length; o++) {
+                    //                 console.log(`\n\n ${tmp[o].title?tmp[o].title:tmp[o].shopName}`)
+                    //                 if (tmp[o].status == 1) {
+                    //                     conti = true
+                    //                     await tigernian_collectScore(tmp[o].taskToken, task.taskId)
+                    //                 }
 
-                                }
-                                await $.wait(8000)
-                                for (var o = 0; o < tmp.length; o++) {
-                                    if (tmp[o].status == 1) {
-                                        conti = true
-                                        await qryViewkitCallbackResult(tmp[o].taskToken)
-                                    }
+                    //             }
+                    //             await $.wait(8000)
+                    //             for (var o = 0; o < tmp.length; o++) {
+                    //                 if (tmp[o].status == 1) {
+                    //                     conti = true
+                    //                     await qryViewkitCallbackResult(tmp[o].taskToken)
+                    //                 }
 
-                                }
-                                break
-                            case 2:
-                                r = await tigernian_getFeedDetail(task.taskId)
-                                var t = 0;
-                                for (var o = 0; o < r.productInfoVos.length; o++) {
-                                    if (r.productInfoVos[o].status == 1) {
-                                        conti = true
-                                        await tigernian_collectScore(r.productInfoVos[o].taskToken, task.taskId)
-                                        t++
-                                        if (t >= 5) break
-                                    }
+                    //             }
+                    //             break
+                    //         case 2:
+                    //             r = await tigernian_getFeedDetail(task.taskId)
+                    //             var t = 0;
+                    //             for (var o = 0; o < r.productInfoVos.length; o++) {
+                    //                 if (r.productInfoVos[o].status == 1) {
+                    //                     conti = true
+                    //                     await tigernian_collectScore(r.productInfoVos[o].taskToken, task.taskId)
+                    //                     t++
+                    //                     if (t >= 5) break
+                    //                 }
 
-                                }
-                                break
-                            case 5:
-                                r = await tigernian_getFeedDetail2(task.taskId)
-                                var t = 0;
-                                for (var o = 0; o < r.browseShopVo.length; o++) {
-                                    if (r.browseShopVo[o].status == 1) {
-                                        conti = true
-                                        await tigernian_collectScore(r.browseShopVo[o].taskToken, task.taskId)
-                                        t++
-                                        if (t >= 5) break
-                                    }
+                    //             }
+                    //             break
+                    //         case 5:
+                    //             r = await tigernian_getFeedDetail2(task.taskId)
+                    //             var t = 0;
+                    //             for (var o = 0; o < r.browseShopVo.length; o++) {
+                    //                 if (r.browseShopVo[o].status == 1) {
+                    //                     conti = true
+                    //                     await tigernian_collectScore(r.browseShopVo[o].taskToken, task.taskId)
+                    //                     t++
+                    //                     if (t >= 5) break
+                    //                 }
 
-                                }
-                                break
-                            case 21:
-                                if (process.env.FS_LEVEL != 'card') {
-                                    console.log('默认不开卡，设置FS_LEVEL为card开卡')
-                                }else{
-                                    for (var o = 0; o < task.brandMemberVos.length; o++) {
-                                        if (task.brandMemberVos[o].status == 1) {
-                                            console.log(`\n\n ${task.brandMemberVos[o].title}`)
-                                            memberUrl = task.brandMemberVos[o].memberUrl
-                                            memberUrl = transform(memberUrl)
-                                            await join(task.brandMemberVos[o].vendorIds, memberUrl.channel, memberUrl.shopId ? memberUrl.shopId : "")
-                                            await tigernian_collectScore(task.brandMemberVos[o].taskToken, task.taskId)
-                                        }
+                    //             }
+                    //             break
+                    //         case 21:
+                    //             if (process.env.FS_LEVEL != 'card') {
+                    //                 console.log('默认不开卡，设置FS_LEVEL为card开卡')
+                    //             }else{
+                    //                 for (var o = 0; o < task.brandMemberVos.length; o++) {
+                    //                     if (task.brandMemberVos[o].status == 1) {
+                    //                         console.log(`\n\n ${task.brandMemberVos[o].title}`)
+                    //                         memberUrl = task.brandMemberVos[o].memberUrl
+                    //                         memberUrl = transform(memberUrl)
+                    //                         await join(task.brandMemberVos[o].vendorIds, memberUrl.channel, memberUrl.shopId ? memberUrl.shopId : "")
+                    //                         await tigernian_collectScore(task.brandMemberVos[o].taskToken, task.taskId)
+                    //                     }
 
-                                    }
-                                }
-                        }
+                    //                 }
+                    //             }
+                    //     }
 
-                    }
+                    // }
                     await $.wait(1000)
                 } while (conti)
 
